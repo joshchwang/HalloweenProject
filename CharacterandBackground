@@ -1,0 +1,32 @@
+def setup():
+    global bg, wizard, wizard0,wizard1,wizard2,wizard3, wizardx
+    size(1100, 520)
+    bg = loadImage("background.jpg")
+    wizard = loadImage("wizard.gif")
+    wizard0 = loadImage("wizard 0.gif")
+    wizard1 = loadImage("wizard 1.gif")
+    wizard2 = loadImage("wizard 2.gif")
+    wizard3 = loadImage("wizard 3.gif")
+    wizardx=-50
+def keyReleased():
+    if key=='d':
+        global wizardx
+        wizardx+=1
+    elif key=='a':
+        global wizardx
+        wizardx-=1   
+   
+    else:
+        wizardx=-50
+
+
+def draw():
+    background(0)
+    #background
+    image(bg,0,0,1100,520)
+    if mousePressed==True:
+        image(wizard0,wizardx,300,300,300)    
+    else:
+        image(wizard3,wizardx,300,300,300)
+    
+    
